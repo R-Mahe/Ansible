@@ -10,9 +10,13 @@
      notify: start firewalld  
    - name: install httpd
      yum:
-        name: httpd
-        state: latest
-     notify: start httpd    
+      name: httpd
+      state: latest
+     notify: start httpd
+   - name: install mariadb
+     yum:
+      name: mariadb-server
+      state: latest      
   handlers:
    - name: start firewalld
      service:
@@ -21,4 +25,9 @@
    - name: start httpd
      service:
       name: httpd
-      state: started     
+      state: started 
+   - name: install mariadb
+     service:
+      name: mariadb
+      state: started
+      
