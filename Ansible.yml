@@ -6,7 +6,7 @@
    - name: install firewalld
      yum: 
       name: firewalld
-      state: lastest
+      state: latest
      notify: start firewalld  
    - name: install httpd
      yum:
