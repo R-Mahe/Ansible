@@ -1,7 +1,7 @@
 ---
 - name: ansible Play
   hosts: localhost
-  became: yes
+  become: yes
   tasks:
    - name: install httpd
      yum:
