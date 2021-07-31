@@ -1,0 +1,13 @@
+---
+- name: ansible Play
+  hosts: localhost
+  became: yes
+  tasks:
+   - name: install httpd
+     yum:
+        name: httpd
+        state: lastest
+   - name: start httpd
+     service :
+        name: httpd
+        state: started           
