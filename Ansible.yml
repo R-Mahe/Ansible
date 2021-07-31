@@ -19,6 +19,6 @@
       name: firewalld
       state: started 
    - name: start httpd
-      service:
-       name: httpd
-       state: started     
+     service:
+      name: httpd
+      state: started     
