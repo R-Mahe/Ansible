@@ -11,7 +11,7 @@
    - name: install httpd
      yum:
         name: httpd
-        state: lastest
+        state: latest
      notify: start httpd    
   handlers:
    - name: start firewalld
