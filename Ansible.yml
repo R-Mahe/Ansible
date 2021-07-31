@@ -3,11 +3,22 @@
   hosts: localhost
   become: yes
   tasks:
+   - name: install firewalld
+     yum: 
+      name: firewalld
+      state: lastest
+    notify: start firewalld  
    - name: install httpd
      yum:
         name: httpd
         state: lastest
-   - name: start httpd
+    notify: start httpd    
+  handlers:
+  - name: start firewalld
+    service:
+     name: firewalld
+     state: started 
+  - name: start httpd
      service :
-        name: httpd
-        state: started           
+      name: httpd
+      state: started     
