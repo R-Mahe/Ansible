@@ -16,7 +16,13 @@
    - name: install mariadb
      yum:
       name: mariadb-server
-      state: latest      
+      state: latest
+     notify: start mariadb      
+   - name: install php
+     yum:
+      name: php
+      state: latest
+     notify: start php     
   handlers:
    - name: start firewalld
      service:
@@ -26,8 +32,7 @@
      service:
       name: httpd
       state: started 
-   - name: install mariadb
+   - name: start mariadb
      service:
       name: mariadb
       state: started
-      
